@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rainfall Prediction Using Machine Learning</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="brand"><span class="icon">🌧️</span> Rainfall Predictor</div>
+    <div class="nav-links">
+      <a href="{{ url_for('home') }}">Home</a>
+      <a href="{{ url_for('predict_form') }}">Predict</a>
+    </div>
+  </nav>
+
+  <section class="hero">
+    <h1>Rainfall Prediction Using Machine Learning</h1>
+    <p class="subtitle">
+      A college-level ML web application that predicts whether rainfall is
+      expected at a location using real weather data — temperature, wind
+      speed, air pressure, season and more.
+    </p>
+    <a href="{{ url_for('predict_form') }}" class="btn btn-primary">Predict Rainfall</a>
+
+    {% if load_error %}
+      <p style="color:#fecaca; margin-top:18px;">⚠ {{ load_error }}</p>
+    {% elif accuracy %}
+      <div class="accuracy-badge"> Model trained with {{ accuracy }}% test accuracy</div>
+    {% endif %}
+  </section>
+
+  <section class="section" id="about">
+    <h2>About the Project</h2>
+    <p class="section-subtitle">
+      A simple, explainable, end-to-end machine learning project — built for
+      learning and demonstration.
+    </p>
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-icon"></div>
+        <h3>Goal</h3>
+        <p>Predict whether rainfall will occur on a given day using historical weather station data from across India.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon"></div>
+        <h3>Dataset</h3>
+        <p>Daily weather records including temperature, wind, pressure, elevation, and location, collected from Indian weather stations.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon"></div>
+        <h3>Approach</h3>
+        <p>A supervised classification model learns the relationship between weather conditions and rainfall occurrence.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="ml">
+    <h2>Machine Learning</h2>
+    <p class="section-subtitle">How the prediction engine works under the hood</p>
+    <div class="cards-grid">
+      <div class="card">
+        <div class="card-icon"></div>
+        <h3>Random Forest Classifier</h3>
+        <p>An ensemble of many decision trees votes together to classify each day as "Rainfall" or "No Rainfall", which makes it robust and accurate.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon"></div>
+        <h3>Data Cleaning</h3>
+        <p>Missing values are filled, categorical fields (month, season, state) are encoded, and numeric features are scaled before training.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon"></div>
+        <h3>Evaluation</h3>
+        <p>The model is tested on unseen data and evaluated using accuracy, a classification report, and a confusion matrix.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="features">
+    <h2>Features</h2>
+    <p class="section-subtitle">What this application offers</p>
+    <div class="cards-grid">
+      <div class="card"><div class="card-icon"></div><h3>Web Interface</h3><p>Clean Flask + HTML/CSS/JS interface, no frameworks needed.</p></div>
+      <div class="card"><div class="card-icon"></div><h3>Consistent Preprocessing</h3><p>The exact same preprocessing pipeline is used for training and prediction — no feature mismatch.</p></div>
+      <div class="card"><div class="card-icon"></div><h3>Confidence Score</h3><p>Each prediction includes a model confidence percentage.</p></div>
+      <div class="card"><div class="card-icon"></div><h3>Input Validation</h3><p>Form fields are validated on both the browser and server side.</p></div>
+    </div>
+  </section>
+
+  <section class="section" id="how">
+    <h2>How It Works</h2>
+    <p class="section-subtitle">From raw weather data to a live prediction</p>
+    <div class="steps">
+      <div class="step"><div class="step-num">1</div><h3>Enter Weather Data</h3><p>Fill in temperature, wind, pressure, season and location details.</p></div>
+      <div class="step"><div class="step-num">2</div><h3>Preprocessing</h3><p>The app applies the same cleaning and encoding used during training.</p></div>
+      <div class="step"><div class="step-num">3</div><h3>Model Prediction</h3><p>The trained Random Forest model predicts rainfall occurrence.</p></div>
+      <div class="step"><div class="step-num">4</div><h3>Result Displayed</h3><p>You instantly see the prediction and the model's confidence.</p></div>
+    </div>
+    <div style="text-align:center; margin-top:40px;">
+      <a href="{{ url_for('predict_form') }}" class="btn btn-primary">Try It Now</a>
+    </div>
+  </section>
+
+  <footer>
+    Rainfall Prediction Using Machine Learning &mdash; College ML Project (Flask + Scikit-learn)
+  </footer>
+
+</body>
+</html>

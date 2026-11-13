@@ -1,0 +1,122 @@
+{
+  "feature_columns": [
+    "month",
+    "season",
+    "state",
+    "avg_temp",
+    "min_temp",
+    "max_temp",
+    "wind_speed",
+    "air_pressure",
+    "elevation",
+    "latitude",
+    "longitude"
+  ],
+  "categorical_columns": [
+    "month",
+    "season",
+    "state"
+  ],
+  "numerical_columns": [
+    "avg_temp",
+    "min_temp",
+    "max_temp",
+    "wind_speed",
+    "air_pressure",
+    "elevation",
+    "latitude",
+    "longitude"
+  ],
+  "target_column": "rain_occurred",
+  "accuracy": 0.8309027266286468,
+  "categorical_options": {
+    "month": [
+      "April",
+      "August",
+      "December",
+      "February",
+      "January",
+      "July",
+      "June",
+      "March",
+      "May",
+      "November",
+      "October",
+      "September"
+    ],
+    "season": [
+      "Monsoon",
+      "Post-monsoon",
+      "Summer",
+      "Winter"
+    ],
+    "state": [
+      "AN",
+      "AP",
+      "AR",
+      "AS",
+      "BR",
+      "CH",
+      "CT",
+      "DD",
+      "DL",
+      "GA",
+      "GJ",
+      "HP",
+      "HR",
+      "JK",
+      "KA",
+      "KL",
+      "LD",
+      "MH",
+      "ML",
+      "MN",
+      "MP",
+      "MZ",
+      "NL",
+      "OR",
+      "PB",
+      "PY",
+      "RJ",
+      "SK",
+      "TN",
+      "TR",
+      "UP",
+      "WB"
+    ]
+  },
+  "numerical_ranges": {
+    "avg_temp": {
+      "min": -10.4,
+      "max": 43.2
+    },
+    "min_temp": {
+      "min": -18.5,
+      "max": 36.6
+    },
+    "max_temp": {
+      "min": -5.6,
+      "max": 52.4
+    },
+    "wind_speed": {
+      "min": 0.0,
+      "max": 66.6
+    },
+    "air_pressure": {
+      "min": 960.8,
+      "max": 1036.5
+    },
+    "elevation": {
+      "min": 0.0,
+      "max": 2652.0
+    },
+    "latitude": {
+      "min": 7.9833,
+      "max": 34.0833
+    },
+    "longitude": {
+      "min": 68.85,
+      "max": 95.3833
+    }
+  }
+}
